@@ -1,16 +1,16 @@
 <!-- template must always define one root view-->
 <template>
     <div>
-        <h1> {{ title }} </h1>
+        <h1> {{ message }} </h1>
        
     </div>
 </template>
 
 <script>
 export default {
-    data: function(){
+        data: function(){
         return {
-            title:'Friends Component!!!!'
+            message:'I am header!!!!'
         }
     },
     methods:{
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 h1{
     color: purple;
