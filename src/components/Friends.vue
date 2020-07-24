@@ -9,6 +9,20 @@
                 <span v-show="friend.display">{{ friend.body }}</span>
             </li>
         </ul>
+        <div>
+           <ol>
+               <li v-for="(user, index) in users" v-bind:key="index" >
+                   {{ user.name  }} from {{ user.address.geo.lat }}, {{user.address.geo.lng}}
+               </li>
+           </ol>
+        </div>
+         <div>
+           <ol>
+               <li v-for="(user, index) in friends" v-bind:key="index" >
+                   {{ user.name  }} from {{ user.location }}
+               </li>
+           </ol>
+        </div>
     </div>
 </template>
 
@@ -29,7 +43,9 @@ export default {
     */
     data: function(){
         return {
-            message:'Friends Component!!!!'
+            message:'Friends Component!!!!',
+            users:[],
+            friends:[]
            
         }
     },
@@ -38,7 +54,22 @@ export default {
             console.log("titleChanged event will be emitted!")
             this.$emit('titleChanged', 'Props and Events!!!!')
         }
+    },
+    mounted: function(){
+        this.$http.get('https://jsonplaceholder.typicode.com/users')
+                        .then(function(response){
+                            console.log(response)
+                            this.users = response.body
+                        })
+
+        this.$http.get('http://localhost:3000/friends')
+        .then(function(response){
+            console.log(response)
+            this.friends = response.body
+        })
+
     }
+
 }
 </script>
 

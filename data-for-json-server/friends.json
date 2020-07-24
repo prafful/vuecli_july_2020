@@ -1,0 +1,49 @@
+{
+  "friends": [
+    {
+      "name": "OMG",
+      "location": "Chennai",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "CAS",
+      "location": "Kolkata"
+    },
+    {
+      "id": 3,
+      "name": "OWIOH",
+      "location": "Bengaluru"
+    },
+    {
+      "id": 4,
+      "name": "BNP",
+      "location": "Mumbai"
+    }
+  ],
+  "frienddetails": [
+    {
+      "id": 1,
+      "friends_id": 1,
+      "otherfriends": [
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "friends_id": 2,
+      "otherfriends": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": 1,
+      "friends_id": 3,
+      "otherfriends": [
+        1,
+        4
+      ]
+    }
+  ]
+}
